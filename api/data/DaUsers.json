@@ -1,0 +1,34 @@
+{
+    "Users": {
+      "data": [
+        {
+          "id": "39560D8F-DE50-493A-9E98-1D8148B1E63E",
+          "Name": "User 1 Teste - Admin",
+          "UserName": "UserT1",
+          "OneTimeId": "giJV4NBaYr8b",
+          "ClearanceLevel": "6B397605-1CA9-44C5-89A3-1DC187C59B8B"
+        },
+        {
+            "id": "BA14E73C-9A42-43C0-9EE8-BDB6AC132EAC",
+            "Name": "User 2 Teste",
+            "UserName": "UserT2",
+            "OneTimeId": "M0i3T58sUCpe",
+            "ClearanceLevel": "B5B4C29E-67BE-4E04-B288-D42ABC6B9594"
+        },
+        {
+            "id": "6BC17423-B314-486B-9F39-6AE0F9F9F8E5",
+            "Name": "User 3 Teste",
+            "UserName": "UserT3",
+            "OneTimeId": "JhuXXLWmNPWi",
+            "ClearanceLevel": "C48168EC-3451-4051-8E41-3B8FF9B9B4E3"
+        },
+        {
+            "id": "6BC17423-B314-486B-9F39-6AE0F9F9F8E5",
+            "Name": "User 4 Teste",
+            "UserName": "UserT3",
+            "OneTimeId": "2pUK9RDijGxt",
+            "ClearanceLevel": "C14AC0B9-5ECC-4857-AE3A-A7B4F3018DCD"
+        }
+      ]
+    }
+  }
