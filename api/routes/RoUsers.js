@@ -1,6 +1,7 @@
 module.exports = app => {
-    const controller = require('../controllers/CoUsers')();
+    const controller = app.controllers.CoUsers;
   
     app.route('/api/v1/Users')
-      .get(controller.listUsers);
+      .get(controller.listUsers)
+      .post(controller.addUser);
   }
