@@ -4,4 +4,8 @@ module.exports = app => {
     app.route('/api/v1/Users')
       .get(controller.listUsers)
       .post(controller.addUser);
+
+    app.route('/api/v1/Users/:userid')
+      .delete(controller.deleteUser)
+      .get(controller.listUser);
   }

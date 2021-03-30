@@ -5,10 +5,68 @@ module.exports = app => {
     const UsersDB = app.data.DaUsers;
     const controller = {};
   
+    //List all Users
     controller.listUsers = (req, res) => {
-      res.status(200).json(UsersDB)
+
+      (async function () {
+
+        try {
+
+          const pool = await poolPromise
+
+          const result = await pool.request()
+            .query('Select * From [User]')
+
+          res.status(200).json(result.recordset)
+
+          return result.recordset
+
+        }
+        catch (err) {
+          return res.status(500).send({
+            err: err.message,
+            response: null
+          });
+        }
+
+      })()
+
     };
 
+        //List one User
+        controller.listUser = (req, res) => {
+
+          const {
+            userid,
+          } = req.params;
+
+          (async function () {
+    
+            try {
+    
+              const pool = await poolPromise
+    
+              const result = await pool.request()
+                .input('id', sql.UniqueIdentifier, userid)
+                .query('Select a.* From [User] a Where a.id = @id')
+    
+              res.status(200).json(result.recordset)
+    
+              return result.recordset
+    
+            }
+            catch (err) {
+              return res.status(500).send({
+                err: err.message,
+                response: null
+              });
+            }
+    
+          })()
+    
+        };
+
+    //Add User
     controller.addUser = (req, res) => {
 
       (async function () {
@@ -26,6 +84,39 @@ module.exports = app => {
 
           res.status(201).send({
                 msg: 'User inserted'
+              })
+
+        }
+        catch (err) {
+          return res.status(500).send({
+            err: err.message,
+            response: null
+          });
+        }
+
+      })()
+
+    }
+
+    //Delete User
+    controller.deleteUser = (req, res) => {
+
+      const {
+        userid,
+      } = req.params;
+
+      (async function () {
+
+        try {
+
+          const pool = await poolPromise
+
+          const result = await pool.request()
+            .input('id', sql.UniqueIdentifier, userid)
+            .query('Delete a From [User] a Where a.Id = @id')
+
+          res.status(201).send({
+                msg: 'User deleted'
               })
 
         }
