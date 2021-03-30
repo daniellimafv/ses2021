@@ -2,7 +2,6 @@ const sql = require('mssql')
 const { poolPromise } = require('../../mssql-db')
 
 module.exports = app => {
-    const UsersDB = app.data.DaUsers;
     const controller = {};
   
     //List all Users
