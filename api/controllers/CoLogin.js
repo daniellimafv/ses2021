@@ -1,5 +1,6 @@
 const sql = require('mssql')
 const { poolPromise } = require('../../mssql-db')
+var tools = require('../../tools');
 
 module.exports = app => {
     const controller = {};
@@ -12,6 +13,9 @@ module.exports = app => {
             try {
     
               const pool = await poolPromise
+
+              tools.validateUserName(req.body.userName)
+              tools.validateOneTimeId(req.body.oneTimeId)
     
               const result = await pool.request()
                 .input('username', sql.VarChar(8), req.body.userName)

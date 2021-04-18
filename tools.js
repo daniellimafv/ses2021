@@ -1,3 +1,4 @@
+/*
 function makeOneTimeId(length) {
     var result           = '';
     var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -7,3 +8,37 @@ function makeOneTimeId(length) {
     }
     return result;
  }
+ */
+
+const v = require('validator')
+
+module.exports = {
+  validateGUID: function (id) {
+    if (v.isUUID(id)) {
+      return true
+    } else {
+      throw new Error('Invalide ID format')
+    }
+  },
+  validateUserName: function (username) {
+    if (isLength(username,1,8)) {
+      return true
+    } else {
+      throw new Error('Invalide username size')
+    }
+  },
+  validateOneTimeId: function (username) {
+    if (isLength(username,12,12)) {
+      return true
+    } else {
+      throw new Error('Invalide OneTimeId size')
+    }
+  },
+  validateName: function (username) {
+    if (isLength(username,100,100)) {
+      return true
+    } else {
+      throw new Error('Invalide Name size')
+    }
+  }
+};

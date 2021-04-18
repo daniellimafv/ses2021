@@ -7,5 +7,6 @@ module.exports = app => {
 
     app.route('/api/v1/Users/:userid')
       .delete(controller.deleteUser)
-      .get(controller.listUser);
+      .get(controller.listUser)
+      .post(controller.updateUser);
   }

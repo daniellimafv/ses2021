@@ -1,5 +1,6 @@
 const sql = require('mssql')
 const { poolPromise } = require('../../mssql-db')
+var tools = require('../../tools');
 
 module.exports = app => {
     const controller = {};
@@ -45,6 +46,8 @@ module.exports = app => {
     
               const pool = await poolPromise
     
+              tools.validateGUID(userid)
+
               const result = await pool.request()
                 .input('id', sql.UniqueIdentifier, userid)
                 .query('Select a.* From [User] a Where a.id = @id')
@@ -73,6 +76,11 @@ module.exports = app => {
         try {
 
           const pool = await poolPromise
+
+          tools.validateName(req.body.name)
+          tools.validateUserName(req.body.username)
+          tools.validateOneTimeId(req.body.onetimeid)
+          tools.validateGUID(req.body.clearancelevel)
 
           const result = await pool.request()
             .input('name', sql.VarChar(100), req.body.name)
@@ -110,12 +118,53 @@ module.exports = app => {
 
           const pool = await poolPromise
 
+          tools.validateGUID(userid)
+
           const result = await pool.request()
             .input('id', sql.UniqueIdentifier, userid)
             .query('Delete a From [User] a Where a.Id = @id')
 
           res.status(201).send({
                 msg: 'User deleted'
+              })
+
+        }
+        catch (err) {
+          return res.status(500).send({
+            err: err.message,
+            response: null
+          });
+        }
+
+      })()
+
+    }
+
+    //Update User
+    controller.updateUser = (req, res) => {
+
+      const {
+        userid,
+      } = req.params;
+
+      (async function () {
+
+        try {
+
+          const pool = await poolPromise
+
+          tools.validateGUID(userid)
+          tools.validateGUID(req.body.clearancelevel)
+          tools.validateName(req.body.name)
+
+          const result = await pool.request()
+            .input('name', sql.VarChar(100), req.body.name)
+            .input('clearancelevel', sql.UniqueIdentifier, req.body.clearancelevel)
+            .input('id', sql.UniqueIdentifier, userid)
+            .query('Update a set a.Name = @name, a.ClearanceLevel = @clearancelevel From [User] a Where a.id = @id')
+
+          res.status(201).send({
+                msg: 'User inserted'
               })
 
         }
