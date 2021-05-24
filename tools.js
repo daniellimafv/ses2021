@@ -21,21 +21,21 @@ module.exports = {
     }
   },
   validateUserName: function (username) {
-    if (isLength(username,1,8)) {
+    if (v.isLength(username,1,8)) {
       return true
     } else {
       throw new Error('Invalide username size')
     }
   },
   validateOneTimeId: function (username) {
-    if (isLength(username,12,12)) {
+    if (v.isLength(username,12,12)) {
       return true
     } else {
       throw new Error('Invalide OneTimeId size')
     }
   },
   validateName: function (username) {
-    if (isLength(username,100,100)) {
+    if (v.isLength(username,100,100)) {
       return true
     } else {
       throw new Error('Invalide Name size')

@@ -38,5 +38,37 @@ module.exports = app => {
     
         };
 
+        //updateLoginData
+        controller.updateLoginData = (req, res) => {
+
+          (async function () {
+    
+            try {
+    
+              const pool = await poolPromise
+
+              tools.validateUserName(req.body.userName)
+    
+              const result = await pool.request()
+                .input('username', sql.VarChar(8), req.body.userName)
+                .input('ip', sql.VarChar(50), req.body.ip)
+                .query('Exec dbo.updateLoginData @username, @ip')
+    
+              res.status(200).json(result.recordset)
+    
+              return result.recordset
+    
+            }
+            catch (err) {
+              return res.status(500).send({
+                err: err.message,
+                response: null
+              });
+            }
+    
+          })()
+    
+        };
+
     return controller;
   }
