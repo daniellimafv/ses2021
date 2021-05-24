@@ -15,7 +15,7 @@ module.exports = app => {
           const pool = await poolPromise
 
           const result = await pool.request()
-            .query('Select * From [User]')
+            .query('Exec [dbo].[ListAllUsers]')
 
           res.status(200).json(result.recordset)
 
