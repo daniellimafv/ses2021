@@ -34,8 +34,8 @@ module.exports = {
       throw new Error('Invalide OneTimeId size')
     }
   },
-  validateName: function (username) {
-    if (v.isLength(username,100,100)) {
+  validateName: function (name) {
+    if (v.isLength(name,1,100)) {
       return true
     } else {
       throw new Error('Invalide Name size')
