@@ -41,7 +41,6 @@ module.exports = app => {
         controller.listUser = (req, res) => {
 
           res.setHeader('Access-Control-Allow-Origin', '*');
-          res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
           res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
           const {
@@ -54,11 +53,11 @@ module.exports = app => {
     
               const pool = await poolPromise
     
-              tools.validateGUID(userid)
+              //tools.validateGUID(userid)
 
               const result = await pool.request()
-                .input('id', sql.UniqueIdentifier, userid)
-                .query('Select a.* From [User] a Where a.id = @id')
+                .input('id', sql.String, userid)
+                .query('Exec dbo.[ListOneUsers] @id')
     
               res.status(200).json(result.recordset)
     
