@@ -75,6 +75,8 @@ module.exports = app => {
     //Add User
     controller.addUser = (req, res) => {
 
+      res.setHeader('Access-Control-Allow-Origin', '*');
+
       (async function () {
 
         try {
@@ -112,6 +114,8 @@ module.exports = app => {
     //Delete User
     controller.deleteUser = (req, res) => {
 
+      res.setHeader('Access-Control-Allow-Origin', '*');
+
       const {
         userid,
       } = req.params;
@@ -146,6 +150,8 @@ module.exports = app => {
 
     //Update User
     controller.updateUser = (req, res) => {
+
+      res.setHeader('Access-Control-Allow-Origin', '*');
 
       const {
         userid,
