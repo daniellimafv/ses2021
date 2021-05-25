@@ -56,7 +56,7 @@ module.exports = app => {
               //tools.validateGUID(userid)
 
               const result = await pool.request()
-                .input('id', sql.String, userid)
+                .input('id', sql.VarChar(100), userid)
                 .query('Exec dbo.[ListOneUsers] @id')
     
               res.status(200).json(result.recordset)
