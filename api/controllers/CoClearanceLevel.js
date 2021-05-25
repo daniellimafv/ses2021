@@ -7,6 +7,8 @@ module.exports = app => {
         //List all Clrarance Levels
         controller.listClearanceLevel = (req, res) => {
 
+          res.setHeader('Access-Control-Allow-Origin', '*');
+
           (async function () {
     
             try {

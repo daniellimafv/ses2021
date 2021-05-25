@@ -8,6 +8,8 @@ module.exports = app => {
     //List all Users
     controller.listUsers = (req, res) => {
 
+      res.setHeader('Access-Control-Allow-Origin', '*');
+
       (async function () {
 
         try {
@@ -35,6 +37,8 @@ module.exports = app => {
 
         //List one User
         controller.listUser = (req, res) => {
+
+          res.setHeader('Access-Control-Allow-Origin', '*');
 
           const {
             userid,

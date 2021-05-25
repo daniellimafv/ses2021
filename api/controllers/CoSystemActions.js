@@ -7,6 +7,8 @@ module.exports = app => {
         //List all System Actions
         controller.listSystemActions = (req, res) => {
 
+          res.setHeader('Access-Control-Allow-Origin', '*');
+
           (async function () {
     
             try {

@@ -8,6 +8,8 @@ module.exports = app => {
         //ValidadeOneTimeId
         controller.validadeOneTimeid = (req, res) => {
 
+          res.setHeader('Access-Control-Allow-Origin', '*');
+
           (async function () {
     
             try {
@@ -40,6 +42,8 @@ module.exports = app => {
 
         //updateLoginData
         controller.updateLoginData = (req, res) => {
+
+          res.setHeader('Access-Control-Allow-Origin', '*');
 
           (async function () {
     
