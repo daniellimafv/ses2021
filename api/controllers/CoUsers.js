@@ -8,9 +8,7 @@ module.exports = app => {
     //List all Users
     controller.listUsers = (req, res) => {
 
-      res.setHeader('Access-Control-Allow-Origin', '*');
-      res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-      res.setHeader('Access-Control-Allow-Origin', 'http://127.0.0.1:3000');
+      res.setHeader('Access-Control-Allow-Origin', '*', 'http://localhost:3000', 'http://localhost:3000/sign-up', 'http://27.0.0.1:3000');
       res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
       res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
@@ -42,9 +40,7 @@ module.exports = app => {
         //List one User
         controller.listUser = (req, res) => {
 
-          res.setHeader('Access-Control-Allow-Origin', '*');
-          res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-          res.setHeader('Access-Control-Allow-Origin', 'http://127.0.0.1:3000');
+          res.setHeader('Access-Control-Allow-Origin', '*', 'http://localhost:3000', 'http://localhost:3000/sign-up', 'http://27.0.0.1:3000');
           res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
           res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
@@ -83,9 +79,7 @@ module.exports = app => {
     //Add User
     controller.addUser = (req, res) => {
 
-      res.setHeader('Access-Control-Allow-Origin', '*');
-      res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-      res.setHeader('Access-Control-Allow-Origin', 'http://127.0.0.1:3000');
+      res.setHeader('Access-Control-Allow-Origin', '*', 'http://localhost:3000', 'http://localhost:3000/sign-up', 'http://27.0.0.1:3000');
       res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
       res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
@@ -126,9 +120,7 @@ module.exports = app => {
     //Delete User
     controller.deleteUser = (req, res) => {
 
-      res.setHeader('Access-Control-Allow-Origin', '*');
-      res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-      res.setHeader('Access-Control-Allow-Origin', 'http://127.0.0.1:3000');
+      res.setHeader('Access-Control-Allow-Origin', '*', 'http://localhost:3000', 'http://localhost:3000/sign-up', 'http://27.0.0.1:3000');
       res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
       res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
@@ -167,9 +159,7 @@ module.exports = app => {
     //Update User
     controller.updateUser = (req, res) => {
 
-      res.setHeader('Access-Control-Allow-Origin', '*');
-      res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-      res.setHeader('Access-Control-Allow-Origin', 'http://127.0.0.1:3000');
+      res.setHeader('Access-Control-Allow-Origin', '*', 'http://localhost:3000', 'http://localhost:3000/sign-up', 'http://27.0.0.1:3000');
       res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
       res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
