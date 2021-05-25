@@ -9,6 +9,7 @@ module.exports = app => {
     controller.listUsers = (req, res) => {
 
       res.setHeader('Access-Control-Allow-Origin', '*');
+      res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
       res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
       (async function () {
@@ -40,6 +41,7 @@ module.exports = app => {
         controller.listUser = (req, res) => {
 
           res.setHeader('Access-Control-Allow-Origin', '*');
+          res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
           res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
           const {
@@ -78,6 +80,7 @@ module.exports = app => {
     controller.addUser = (req, res) => {
 
       res.setHeader('Access-Control-Allow-Origin', '*');
+      res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
       res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
       (async function () {
@@ -118,6 +121,7 @@ module.exports = app => {
     controller.deleteUser = (req, res) => {
 
       res.setHeader('Access-Control-Allow-Origin', '*');
+      res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
       res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
       const {
@@ -156,6 +160,7 @@ module.exports = app => {
     controller.updateUser = (req, res) => {
 
       res.setHeader('Access-Control-Allow-Origin', '*');
+      res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
       res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
       const {
